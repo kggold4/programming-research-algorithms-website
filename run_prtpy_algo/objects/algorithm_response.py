@@ -1,6 +1,5 @@
+import itertools
 import json
-
-from prtpy.utils import calculate_diff
 
 algorithm_descriptions = {"kk": "Karmarkar-karp", "ckk": "Complete Karmarkar-Karp",
                           "rnp": "Recursive Number Partitioning", "irnp": "Improved Recursive Number Partitioning"}
@@ -26,3 +25,13 @@ def get_algorithms_choices():
     for key, value in algorithm_descriptions.items():
         result.append((key, value))
     return result
+
+
+def calculate_diff(items: list[int]):
+    different_sum = 0
+    for combination in itertools.combinations(items, 2):
+        if len(combination[0]) == 0 or len(combination[1]) == 0:
+            break
+        else:
+            different_sum += abs(sum(combination[0]) - sum(combination[1]))
+    return different_sum
