@@ -1,7 +1,7 @@
-from prtpy.partitioning.ckk import ckk
-from prtpy.partitioning.irnp import irnp
 from prtpy.partitioning.kk import kk
+from prtpy.partitioning.ckk import ckk
 from prtpy.partitioning.rnp import rnp
+from prtpy.partitioning.irnp import irnp
 from run_prtpy_algo.objects.algorithm_response import AlgorithmResponse
 
 algorithm_functions = {"kk": kk, "ckk": ckk, "rnp": rnp, "irnp": irnp}
