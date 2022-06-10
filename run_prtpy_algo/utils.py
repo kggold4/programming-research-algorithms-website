@@ -1,5 +1,3 @@
-import sys
-sys.path.append('/home/kggold4/prtpy')
 from prtpy.partitioning.ckk import ckk
 from prtpy.partitioning.irnp import irnp
 from prtpy.partitioning.kk import kk
