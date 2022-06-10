@@ -4,5 +4,5 @@ DEBUG_MODE = False
 
 if __name__ == '__main__':
     import sys
-    sys.path.append('/home/kggold4/prtpy')
+    sys.path.append('../prtpy')
     app.run(debug=DEBUG_MODE)
