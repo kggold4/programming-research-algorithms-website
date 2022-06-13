@@ -30,6 +30,10 @@ def get_algorithm_response(algo_request):
         error = f"Input Error: RNP and IRNP algorithm is capable with less than 4 bins only and 7 items (Computational Limit)"
         result_bins = []  # empty bins
         sums = []
+    elif (algorithm_name == 'rnp' or algorithm_name == 'irnp') and len(items) >= 9 and num_of_bins >= 3:
+        error = f"Input Error: RNP and IRNP algorithm is capable with less than 3 bins only and 9 items (Computational Limit)"
+        result_bins = []  # empty bins
+        sums = []
     else:
         from prtpy import partition
         result_bins = partition(algorithm=algorithm, numbins=num_of_bins, items=items)
