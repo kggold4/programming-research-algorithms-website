@@ -21,6 +21,9 @@ def get_algorithm_response(algo_request):
     items = algo_request.get('items')
     num_of_bins = int(algo_request.get('num_of_bins'))
 
+    result_bins = []  # empty bins
+    sums = []
+
     flag = False
     error = ''
     if algorithm_name == 'kk' and num_of_bins > 2:
@@ -34,10 +37,7 @@ def get_algorithm_response(algo_request):
         flag = True
     else:
         from prtpy import partition
-        if flag:
-            result_bins = []  # empty bins
-            sums = []
-        else:
+        if not flag:
             result_bins = partition(algorithm=algorithm, numbins=num_of_bins, items=items)
             sums = [sum(s) for s in result_bins]
     return AlgorithmResponse(name=algorithm_name, bins=result_bins, sums=sums, error=error)
